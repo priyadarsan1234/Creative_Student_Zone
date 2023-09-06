@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/loginpage"
-    tools:context="com.crtv.creativetechnocollege.Login_page">
+    tools:context="com.example.creativetechnocollege.com.crtv.creativetechnocollege.Login_page"
+    >
+
 
     <EditText
         android:id="@+id/userid"
@@ -24,9 +27,8 @@
         android:padding="15dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        tools:ignore="RtlHardcoded,TextFields"
-        android:layout_alignParentLeft="true"
-        android:autofillHints="" />
+        tools:ignore="RtlHardcoded,VisualLintTextFieldSize"
+        android:layout_alignParentLeft="true" />
 
     <EditText
         android:id="@+id/userpwd"
@@ -47,26 +49,29 @@
         android:padding="15dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        tools:ignore="RtlHardcoded"
+        tools:ignore="RtlHardcoded,VisualLintTextFieldSize"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="0dp"
         android:layout_alignParentRight="true"
-        android:layout_alignLeft="@+id/userid"
-        android:autofillHints="" />
+        android:layout_alignLeft="@+id/userid" />
 
     <Button
         android:id="@+id/ok"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/userpwd"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="215dp"
-        android:backgroundTint="@color/appcolor3"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:gravity="center"
-        android:padding="5dp"
+        android:padding="15dp"
         android:text="@string/login"
-        android:textSize="15dp"
-        tools:ignore="SpUsage,TextSizeCheck" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:ignore="SpUsage" />
+
+
+
 </RelativeLayout>
