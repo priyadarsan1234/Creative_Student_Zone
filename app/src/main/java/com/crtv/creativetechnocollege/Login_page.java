@@ -1,10 +1,15 @@
 package com.crtv.creativetechnocollege;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -32,7 +37,10 @@ public class Login_page extends Fragment {
     EditText editText1, editText2;
     Button button;
     SharedPreferences sharedPreferences;
+    boolean passVisible;
 
+
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -43,6 +51,38 @@ public class Login_page extends Fragment {
         editText1 = view.findViewById(R.id.userid);
         editText2 = view.findViewById(R.id.userpwd);
         button = view.findViewById(R.id.ok);
+
+
+
+        editText2.setOnTouchListener(new View.OnTouchListener() {
+            final int DRAWABLE_RIGHT = 2;
+
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    if (motionEvent.getRawX() >= (editText2.getRight() - editText2.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        int selection = editText2.getSelectionEnd();
+                        if (passVisible) {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                                editText2.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibility_off_icon, 0);
+                            }
+                            editText2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passVisible = false;
+                        } else {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                                editText2.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibility_on_icon, 0);
+                            }
+                            editText2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passVisible = true;
+                        }
+                        editText2.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
 
         sharedPreferences = getActivity().getSharedPreferences("Data", Context.MODE_PRIVATE);
         final String type = sharedPreferences.getString("ID", "");

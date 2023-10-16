@@ -15,6 +15,9 @@
     <color name="appcolor3">#4958dc</color>
     <color name="appcolor4">#B711DC</color>
     <color name="appcolor5">#c8c8fe</color>
+
+    <color name="my_primary">#5E35B1</color>
+    <color name="my_secondary">#5E35B1</color>
     <color name="spinner_boarder">#6969EF</color>
     <color name="themeBackground">#7CC8C8FE</color>
     <color name="lightgray">#c1c1c1</color>
