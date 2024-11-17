@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D9DADC"
+    android:gravity="center"
+    tools:context="com.crtv.creativetechnocollege.Library_Option">
+
+    <LinearLayout
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/library_management_systm_back"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_25sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIBRARY MANAGEMENT SYSTEM"
+            android:textStyle="bold"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_18ssp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/library_management_system"/>
+
+        <Button
+            android:id="@+id/library_management"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_margin="@dimen/_5sdp"
+            android:textSize="@dimen/_25ssp"
+            android:text="View" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/e_library_back"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_25sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="E-LIBRARY"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/digital_library"/>
+
+
+        <Button
+            android:id="@+id/e_library"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_margin="@dimen/_5sdp"
+            android:textSize="@dimen/_25ssp"
+            android:text="Open" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
